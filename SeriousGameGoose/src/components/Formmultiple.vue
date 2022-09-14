@@ -1,11 +1,13 @@
-<script>
+<script setup>
+  //import {defineProps} from 'vue'
     import "/style.css";
+    const props = defineProps(['thequestion'])
     </script>
     
     <template>
       <div>
         <div>
-         <h3>x</h3>
+         <h3>{{ thequestion.question }}</h3>
         </div>
       </div>
     </template>

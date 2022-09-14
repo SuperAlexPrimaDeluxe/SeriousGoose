@@ -5,7 +5,9 @@
     <template>
       <div>
         <div>
-         <h3>CQ</h3>
+         <h3>or</h3>
         </div>
       </div>
     </template>
+    
+    

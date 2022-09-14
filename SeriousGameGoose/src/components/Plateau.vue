@@ -4,7 +4,13 @@
     import Joueur from "@/components/Joueur.vue";
     import Dice from "@/components/Dice.vue";
     import Formmultiple from "@/components/Formmultiple.vue";
+    import ChallengeQuestion from "@/components/ChallengeQuestion.vue";
+    import Formunique from "@/components/Formunique.vue";
+    import Liaison from "@/components/Liaison.vue";
+    import Ordre from "@/components/Ordre.vue";
+    import Classement from "@/components/Classement.vue";
     import axios from "axios";
+
 
     
     export default {
@@ -16,7 +22,12 @@
       components: {
     Dice,
     Joueur,
-    Formmultiple
+    Formmultiple,
+    ChallengeQuestion,
+    Formunique,
+    Liaison,
+    Ordre,
+    Classement
 },
       mounted() {
         axios
@@ -38,9 +49,12 @@
         <Dice></Dice>
         <div className="de" v-for="(question, key) in posts" :key="key">
           {{ question.number }}
-          <Formmultiple v-if="question && question.qtype =='form-multiple'">
-            <h3>zbub</h3>
-          </Formmultiple>
+          <Formmultiple :thequestion="question" v-if="question && question.qtype =='form-multiple'" />
+          <ChallengeQuestion v-if="question && question.qtype =='challenge'" />
+          <Formunique v-if="question && question.qtype =='form-unique'"/>
+          <Liaison v-if="question && question.qtype =='liaison'"/>
+          <Ordre v-if="question && question.qtype =='ordre'" />
+          <Classement v-if="question && question.qtype =='classement'" />
         </div>
       </div>
     </template>
