@@ -1,0 +1,12 @@
+.de {
+    width: 10px;
+    height: 10px;
+    border: 1px solid;
+    padding: 20px;
+    display: inline-block;
+  }
+
+  li {
+    color : white;
+    font-size: 72px;
+  }
