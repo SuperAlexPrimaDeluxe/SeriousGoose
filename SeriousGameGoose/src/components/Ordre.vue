@@ -5,8 +5,10 @@
     </script>
     
     <template>
-      <div class="ordre-question">
+      <div class="static">
+        <div>
          <h3>{{ thequestion.question }}</h3>
+        </div>
       </div>
     </template>
     

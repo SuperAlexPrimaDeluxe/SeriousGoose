@@ -11,9 +11,10 @@
     import Ordre from "@/components/Ordre.vue";
     import Classement from "@/components/Classement.vue";
     import ButtonCounterVue from "@/components/ButtonCounter.vue";
+    import Cases from "@/components/Cases.vue";
   
     
-    import axios from "axios";
+    
 import HomeScreen from "./HomeScreen.vue";
 
 
@@ -26,17 +27,6 @@ import HomeScreen from "./HomeScreen.vue";
         };
       },
 
-      methods: {
-    toggleComponentOne () {
- 
-      this.isActive = !this.isActive;
-      //console.log(this.isActive);
-    },
-    toggleComponentTwo () {
-      alert("ZBUB2");
-    },
-
-  },
       components: {
     Dice,
     Joueur,
@@ -46,21 +36,11 @@ import HomeScreen from "./HomeScreen.vue";
     Liaison,
     Ordre,
     Classement,
-    ButtonCounterVue,
     HomeScreen,
+    Cases
 
 },
-      mounted() {
-        axios
-          .get(
-            "https://killer-cepegra.xyz/cockpit-ingrwf10/api/content/items/questions?sort=%7Bnumber%3A%22asc%22%7D"
-          )
-          .then((response) => {
-            //this.posts = response.data;
-            console.log(response.data);
-            this.posts = response.data; // dans mon tableau
-          });
-      },
+      
     };
 
    
@@ -71,7 +51,7 @@ import HomeScreen from "./HomeScreen.vue";
         <HomeScreen />
         <Joueur></Joueur>
         <Dice></Dice>
-    
+        <Cases></Cases>
         <div class="containerde">
         <div class="de" v-for="(question, key) in posts" :key="key" >
           {{ question.number }}
@@ -84,9 +64,9 @@ import HomeScreen from "./HomeScreen.vue";
           <Formunique :thequestion="question" v-if="question && question.qtype =='form-unique'"/>
           <Liaison :thequestion="question" v-if="question && question.qtype =='liaison'"/>-->
   
-          <div @click="toggleComponentOne" >
+          
           <Ordre class="static" :class="{ active: isActive, 'text-danger': hasError }" :thequestion="question" v-if="question && question.qtype =='ordre'"/>
-          </div>
+        
 
             <!-- Comment 
           <Classement :thequestion="question" v-if="question && question.qtype =='classement'" />
