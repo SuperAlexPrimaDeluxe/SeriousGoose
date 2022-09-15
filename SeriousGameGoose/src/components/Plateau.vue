@@ -1,6 +1,7 @@
 <script>
     import "/style.css";
-    
+
+
     import Joueur from "@/components/Joueur.vue";
     import Dice from "@/components/Dice.vue";
     import Formmultiple from "@/components/Formmultiple.vue";
@@ -9,7 +10,11 @@
     import Liaison from "@/components/Liaison.vue";
     import Ordre from "@/components/Ordre.vue";
     import Classement from "@/components/Classement.vue";
+    import ButtonCounterVue from "@/components/ButtonCounter.vue";
+  
+    
     import axios from "axios";
+import HomeScreen from "./HomeScreen.vue";
 
 
     
@@ -17,8 +22,21 @@
       data() {
         return {
           posts: [],
+          isActive: false,
         };
       },
+
+      methods: {
+    toggleComponentOne () {
+ 
+      this.isActive = !this.isActive;
+      //console.log(this.isActive);
+    },
+    toggleComponentTwo () {
+      alert("ZBUB2");
+    },
+
+  },
       components: {
     Dice,
     Joueur,
@@ -27,7 +45,10 @@
     Formunique,
     Liaison,
     Ordre,
-    Classement
+    Classement,
+    ButtonCounterVue,
+    HomeScreen,
+
 },
       mounted() {
         axios
@@ -41,24 +62,40 @@
           });
       },
     };
+
+   
     </script>
     
     <template>
       <div>
+        <HomeScreen />
         <Joueur></Joueur>
         <Dice></Dice>
-        <div className="de" v-for="(question, key) in posts" :key="key">
+    
+        <div class="containerde">
+        <div class="de" v-for="(question, key) in posts" :key="key" >
           {{ question.number }}
-          <div v-if="question.theme =='Théorie'">
-            <span className="theorie">*</span>
-          </div>
+
+
+         <!-- Comment 
+
           <Formmultiple :thequestion="question" v-if="question && question.qtype =='form-multiple'" />
           <ChallengeQuestion :thequestion="question" v-if="question && question.qtype =='challenge'" />
           <Formunique :thequestion="question" v-if="question && question.qtype =='form-unique'"/>
-          <Liaison :thequestion="question" v-if="question && question.qtype =='liaison'"/>
-          <Ordre :thequestion="question" v-if="question && question.qtype =='ordre'" />
-          <Classement :thequestion="question" v-if="question && question.qtype =='classement'" />
+          <Liaison :thequestion="question" v-if="question && question.qtype =='liaison'"/>-->
+  
+          <div @click="toggleComponentOne" >
+          <Ordre class="static" :class="{ active: isActive, 'text-danger': hasError }" :thequestion="question" v-if="question && question.qtype =='ordre'"/>
           </div>
+
+            <!-- Comment 
+          <Classement :thequestion="question" v-if="question && question.qtype =='classement'" />
+
+          -->
+
+        
+        </div>
+        </div>
         </div>
     </template>
     

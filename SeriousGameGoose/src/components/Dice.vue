@@ -16,7 +16,6 @@
     
     <template>
       <div>
-        <button @click="roll">Faire rouler le dice</button>
-        <p>rolled dice value: {{ rolledValue }}</p>
+        <div class="superdice" @click="roll"><span>{{ rolledValue }}</span></div>
       </div>
     </template>

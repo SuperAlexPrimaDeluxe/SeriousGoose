@@ -1,10 +1,35 @@
+body{
+  width: 100%;
+  position: relative;
+}
+header {
+  width: 100%;
+}
+.containerde{
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 .de {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 1px solid;
-    display: inline-block;
     background-color: rebeccapurple;
   }
+
+  .superdice{
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border: 1px solid grey;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+
 
   li {
     color : white;
@@ -23,4 +48,29 @@
   h4{
     font-size: 555px;
     color: chartreuse;
+  }
+
+  .theme-theory{
+background-color:aquamarine;
+  }
+
+  .static{
+    visibility: hidden;
+  }
+
+  .active{
+    visibility: initial;
+  }
+
+  .ordre-question{
+
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 500px;
+    background-color: aliceblue;
+    color: red;
+    z-index: 15114654;
+
+
   }
