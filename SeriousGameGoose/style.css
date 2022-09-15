@@ -2,11 +2,25 @@
     width: 100px;
     height: 100px;
     border: 1px solid;
-    padding: 20px;
     display: inline-block;
+    background-color: rebeccapurple;
   }
 
   li {
     color : white;
     font-size: 8px;
+  }
+
+  p{
+    background-color: red;
+    color: chartreuse;
+  }
+
+  .theorie{
+    color: grey;
+  }
+
+  h4{
+    font-size: 555px;
+    color: chartreuse;
   }

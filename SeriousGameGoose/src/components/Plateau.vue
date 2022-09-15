@@ -49,14 +49,17 @@
         <Dice></Dice>
         <div className="de" v-for="(question, key) in posts" :key="key">
           {{ question.number }}
+          <div v-if="question.theme =='Théorie'">
+            <span className="theorie">*</span>
+          </div>
           <Formmultiple :thequestion="question" v-if="question && question.qtype =='form-multiple'" />
-          <ChallengeQuestion v-if="question && question.qtype =='challenge'" />
-          <Formunique v-if="question && question.qtype =='form-unique'"/>
-          <Liaison v-if="question && question.qtype =='liaison'"/>
-          <Ordre v-if="question && question.qtype =='ordre'" />
-          <Classement v-if="question && question.qtype =='classement'" />
+          <ChallengeQuestion :thequestion="question" v-if="question && question.qtype =='challenge'" />
+          <Formunique :thequestion="question" v-if="question && question.qtype =='form-unique'"/>
+          <Liaison :thequestion="question" v-if="question && question.qtype =='liaison'"/>
+          <Ordre :thequestion="question" v-if="question && question.qtype =='ordre'" />
+          <Classement :thequestion="question" v-if="question && question.qtype =='classement'" />
+          </div>
         </div>
-      </div>
     </template>
     
     
