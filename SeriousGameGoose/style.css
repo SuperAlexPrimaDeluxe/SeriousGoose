@@ -4,20 +4,26 @@ body{
 }
 header {
   width: 100%;
+  
 }
 .containerde{
   width: 100%;
   display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
 }
 
+#app{
+  width: 100%;
+}
+
 .de {
-    width: 50px;
+    width: 150px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid;
-    
   }
 
   .superdice{
@@ -31,11 +37,16 @@ header {
     display: flex;
   }
 
-
+  .dddd{
+    background-color: black;
+    color: white;
+    width: 150px;
+    height: 150px;
+  }
 
   li {
-    color : white;
-    font-size: 8px;
+    color : black;
+    font-size: 15px;
   }
 
   p{
@@ -75,6 +86,8 @@ background-color:aquamarine;
     z-index: 15114654;
   }
 
+  /* Dans le plateau  */ 
+
   .theorie{
     background-color: blueviolet;
     width: 100%;
@@ -85,4 +98,56 @@ background-color:aquamarine;
     background-color: chocolate;
     width: 100%;
     height: 100%
+  }
+
+  .economique{
+    background-color: green;
+    width: 100%;
+    height: 100%
+  }
+
+  .pulique-politique{
+    background-color: yellow;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ul{
+    background-color: brown;
+  }
+
+  .cadre{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid black;
+    text-align: center;
+    color: black;
+  }
+
+  .blokito{
+    display: flex;
+  }
+
+  .bloc1{
+    width: 50%;
+  }
+
+  .bloc2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pd{
+    width:50px;
+    height: 50px;
+  }
+
+  .Megacontainer{
+    width: 50%;
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto auto;
   }

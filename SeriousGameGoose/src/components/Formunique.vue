@@ -5,11 +5,13 @@
     </script>
     
     <template>
-      <div>
-        <div>
-         <h3>{{ thequestion.question }}</h3>
-        </div>
-      </div>
+   <div class="cadre">
+    <h3>La question est</h3>
+    <div class="blokito">
+    <input type="text" />
+    <button>Valider la réponse</button>
+  </div>
+  </div>
     </template>
     
     

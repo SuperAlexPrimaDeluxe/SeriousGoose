@@ -65,8 +65,8 @@ import HomeScreen from "./HomeScreen.vue";
           <Liaison :thequestion="question" v-if="question && question.qtype =='liaison'"/>-->
   
           
-          <Ordre class="static" :class="{ active: isActive, 'text-danger': hasError }" :thequestion="question" v-if="question && question.qtype =='ordre'"/>
-        
+          <!-- <Ordre class="static" :class="{ active: isActive, 'text-danger': hasError }" :thequestion="question" v-if="question && question.qtype =='ordre'"/> -->
+          </div>
 
             <!-- Comment 
           <Classement :thequestion="question" v-if="question && question.qtype =='classement'" />
@@ -76,7 +76,7 @@ import HomeScreen from "./HomeScreen.vue";
         
         </div>
         </div>
-        </div>
+
     </template>
     
     
