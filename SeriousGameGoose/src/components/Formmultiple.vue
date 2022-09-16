@@ -6,7 +6,7 @@
     
     <template>
    <div class="cadre">
-    <h3>La question est</h3>
+    <h3>La question est {{thequestion.question}}</h3>
     <div class="blokito">
     <fieldset>
     <legend>Sélectionnez votre réponse</legend>

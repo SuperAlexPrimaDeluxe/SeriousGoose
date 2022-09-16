@@ -69,7 +69,7 @@ mounted() {
 <div class="pulique-politique" v-else-if="question && question.theme =='Publique / politique'">
   {{ question.number }}
 </div>
-
+<Formmultiple :thequestion="question"></Formmultiple>
 
 </div>
 </div>
